@@ -71,4 +71,10 @@ MySQL 5.7+
 
 Web server (Apache/Nginx)
 
+## Setup
+1. Import database schema from campushub/data/
+2. Update db_connect.php
+3. Run on PHP-enabled server
+
+
 
