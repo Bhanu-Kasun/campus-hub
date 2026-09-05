@@ -1,0 +1,429 @@
+/* CampusHub - style.css
+   Dark theme: black base, red accent, white text
+   Change the variables below to retheme the entire site */
+
+:root {
+    --bg-page:        #0d0d0e;
+    --bg-surface:     #1a1b1e;
+    --bg-surface-alt: #222327;
+    --border-color:   #2c2d31;
+
+    --accent:         #d62828;
+    --accent-hover:   #b31f1f;
+    --accent-muted:   #7a1c1c;
+
+    --text-primary:   #f5f5f5;
+    --text-secondary: #b5b5b5;
+    --text-muted:     #7c7c7c;
+
+    --success:        #2e7d32;
+    --success-bg:     #16261a;
+    --error:          #d62828;
+    --error-bg:       #2a1414;
+
+    --radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+/* Header */
+.site-header {
+    background: #000;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.site-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.92rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Main content */
+.site-content {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    min-height: 60vh;
+}
+
+.site-content h1 {
+    color: var(--text-primary);
+}
+
+.site-content h2 {
+    color: var(--text-primary);
+    margin-top: 1rem;
+}
+
+.site-content p {
+    color: var(--text-secondary);
+}
+
+/* Hero (homepage only) — bold gradient moment */
+.hero {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-muted) 55%, #1a0505 100%);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.hero p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+}
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-body p, .card-body small {
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn:hover { background: var(--accent-hover); }
+
+/* Forms */
+form.form-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    max-width: 480px;
+    margin: 1.5rem auto;
+    padding: 2rem;
+    border-radius: var(--radius);
+}
+
+form.form-box label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+form.form-box input,
+form.form-box select,
+form.form-box textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--bg-page);
+    color: var(--text-primary);
+}
+
+form.form-box input:focus,
+form.form-box select:focus,
+form.form-box textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+form.form-box input:disabled {
+    color: var(--text-muted);
+}
+
+.error-msg {
+    color: #ff8a8a;
+    background: var(--error-bg);
+    border: 1px solid var(--error);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.success-msg {
+    color: #8ee29a;
+    background: var(--success-bg);
+    border: 1px solid var(--success);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Tables (admin pages) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-surface) !important;
+    color: var(--text-primary);
+}
+
+table tr {
+    background: var(--bg-surface) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+table tr:nth-child(even) {
+    background: var(--bg-surface-alt) !important;
+}
+
+table tr:first-child,
+table thead tr {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+table td, table th {
+    background: transparent !important;
+    color: inherit;
+    padding: 0.6rem;
+}
+
+table a {
+    color: var(--accent);
+}
+
+/* Footer */
+.site-footer {
+    background: #000;
+    color: var(--text-secondary);
+    margin-top: 3rem;
+    padding: 3rem 2rem 0;
+    border-top: 2px solid var(--accent);
+}
+
+.footer-columns {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-col h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 0.9rem;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.footer-col ul {
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    text-align: left;
+    color: var(--text-secondary);
+}
+
+.footer-col ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+    color: var(--accent);
+}
+
+.footer-contact li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.footer-contact li a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-social a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-social a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1.2rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* gallery.css - one carousel per event, each photo/video is a slide */
+
+.gallery-category {
+    margin-top: 2.5rem;
+}
+
+.gallery-category h2 {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.event-category-tag {
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.carousel-track-wrap {
+    overflow: hidden;
+    flex: 1;
+    border-radius: var(--radius);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.35s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-audio {
+    padding: 3rem 1.5rem;
+}
+
+.carousel-btn {
+    background: var(--bg-surface);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .carousel-slide img,
+    .carousel-slide video {
+        height: 220px;
+    }
+}
